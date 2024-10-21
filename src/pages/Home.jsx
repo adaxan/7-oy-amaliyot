@@ -84,7 +84,7 @@ function Home() {
               <div
                 key={product.id}
                 onClick={() => handleDetails(product.id)}
-                className="border border-transparent rounded-lg p-4 shadow-md transition-transform duration-300 transform hover:scale-105"
+                className="border border-transparent rounded-lg p-4 shadow-md transition-transform duration-300 transform hover:scale-105 cursor-pointer"
               >
                 <img
                   src={product.attributes.image}

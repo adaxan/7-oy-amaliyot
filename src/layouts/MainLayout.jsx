@@ -1,7 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../App";
 
 function MainLayout({ children }) {
+  const {cart, setCart} = useContext(CartContext);
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    let sum = 0;
+    cart.forEach(c => {
+      sum += Number(c.count)
+    });
+
+    setCount(sum)
+  }, [cart])
+
+  function handleGoCart(event) {
+    event.preventDefault();
+    navigate("/cart")
+  }
+
   return (
     <div className="container mx-auto">
       <header className="flex justify-evenly items-center p-4 bg-gray-100">
@@ -43,12 +62,12 @@ function MainLayout({ children }) {
           </ul>
         </nav>
         <div className="flex items-center gap-4">
-          <span className="text-2xl">🌙</span>
+          <button className="text-2xl cursor-pointer">🌙</button>
           <div className="relative">
-            <span className="text-2xl">🛒</span>    
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">
-              0
-            </span>
+            <button onClick={handleGoCart} className="text-2xl cursor-pointer">🛒</button>    
+            <h4 className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">
+              {count}
+            </h4>
           </div>
         </div>
         <div className="flex items-center gap-4">
