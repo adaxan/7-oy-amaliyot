@@ -18,7 +18,7 @@ function Home() {
 
   useEffect(() => {
     http
-      .get(`products`)
+      .get(`products?featured=true`)
       .then((data) => {
         if (data.status === 200) {
           setProducts(data.data.data);
