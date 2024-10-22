@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Details from "./pages/Details";
-import ErrorPage from "./pages/ErrorPage";
 import Orders from "./pages/Orders";
 import Products from "./pages/Products";
 import Login from "./pages/Login";
