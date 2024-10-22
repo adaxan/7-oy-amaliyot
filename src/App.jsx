@@ -121,8 +121,6 @@ function App() {
               </PrivateRoute>
             }
           ></Route>
-
-          <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
         </Routes>
       </CartContext.Provider>
     </ThemeContext.Provider>
