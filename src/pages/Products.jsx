@@ -16,7 +16,7 @@ function Products() {
           }
         })
         .catch((err) => {
-          console.error("Xato:", err);
+          console.log(err);
         });
     }
   }, [id]); 
